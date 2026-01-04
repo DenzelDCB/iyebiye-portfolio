@@ -307,10 +307,403 @@
             </div>
             <div class="card">
                 <div class="image-container">
+                    <img src="./journalist.png" alt="Journalist">
+                </div>
+                <div class="card-content">
+                    <h4<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iyebiye Babs | Artist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #fdf2f8; /* Light pink background */
+            --text-color: #333;
+            --accent-color: #ff69b4; /* Hot pink */
+            --secondary-accent: #ffb6c1; /* Light pink */
+            --card-bg: #ffffff;
+            --shadow: rgba(255, 105, 180, 0.2);
+        }
+        [data-theme="dark"] {
+            --bg-color: #1e1e2f; /* Deep charcoal */
+            --text-color: #f0e6ef; /* Soft light pink text */
+            --accent-color: #ff85c0; /* Lighter hot pink */
+            --secondary-accent: #c71585; /* Darker pink */
+            --card-bg: #2d2d44;
+            --shadow: rgba(255, 133, 192, 0.3);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(253, 242, 248, 0.9);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.4s;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+        [data-theme="dark"] header {
+            background-color: rgba(30, 30, 47, 0.9);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 2rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--accent-color);
+            transition: transform 0.3s;
+        }
+        .theme-toggle:hover {
+            transform: rotate(15deg);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(to bottom, var(--bg-color), var(--secondary-accent));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px var(--shadow);
+        }
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 900px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        .btn {
+            padding: 1.2rem 2.5rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px var(--shadow);
+        }
+        section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--accent-color);
+            position: relative;
+        }
+        h3::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+        }
+        .about {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about p {
+            margin-bottom: 1.5rem;
+        }
+        .artworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        /* Image protection styles */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+        }
+        .card:hover .image-container img {
+            transform: scale(1.05);
+        }
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: default;
+        }
+
+        .card-content {
+            padding: 2rem;
+            text-align: center;
+        }
+        .card h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+        .card p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .social-links {
+            margin-top: 2rem;
+        }
+        .social-links a {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--secondary-accent);
+        }
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--accent-color);
+            color: white;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 3.5rem; }
+            .hero p { font-size: 1.4rem; }
+            nav ul { flex-direction: column; }
+            nav ul li { margin: 0.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Iyebiye Babs</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#artworks">Professional Artworks</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <section class="hero">
+        <h2>Artistic Visions in Pink Hues</h2>
+        <p>Discover the captivating world of Iyebiye Babs, where art meets emotion in a symphony of soft pastels and vibrant expressions. Explore a curated collection of illustrations, paintings, and digital masterpieces designed to inspire and evoke deep feelings of beauty and wonder.</p>
+        <a href="#artworks" class="btn">Explore My Artworks</a>
+    </section>
+
+    <section class="about" id="about">
+        <h3>About Me</h3>
+        <p>At the heart of my creative journey lies a deep commitment to authenticity, empathy, and beauty. I believe art is a powerful vessel for expressing the unseen emotions and quiet strengths that reside within us all. Through my work, I strive to celebrate vulnerability as a source of power, to honor the gentle resilience of the human spirit, and to remind viewers of the profound joy found in small, tender moments.</p>
+       
+        <p>My practice is guided by core values of kindness, curiosity, and inclusivity. I am passionate about creating spaces, both on canvas and in life where diverse stories and perspectives can bloom freely. Color, especially the spectrum of pink, represents for me warmth, hope, and unconditional love; it is a visual language I return to again and again to evoke feelings of comfort and possibility.</p>
+       
+        <p>Integrity and intention drive every piece I create. I approach art not as mere decoration, but as an invitation to pause, reflect, and connect more deeply with oneself and others. Whether working digitally or with traditional mediums, I aim to craft images that feel like soft whispers of encouragement and gentle reminders that we are all worthy of love, growth, and creative expression.</p>
+       
+        <p>Above all, I value the transformative power of art to heal, uplift, and inspire. My greatest hope is that my work leaves viewers with a renewed sense of wonder and a quiet confidence in their own inner light.</p>
+    </section>
+
+    <section class="artworks" id="artworks">
+        <h3>Professional Artworks</h3>
+        <div class="artworks-grid">
+            <div class="card">
+                <div class="image-container">
+                    <img src="./roller-skater.jpg" alt="Roller Skater">
+                </div>
+                <div class="card-content">
+                    <h4>Roller Skater</h4>
+                    <p>My first drawing, Roller Skater.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
                     <img src="https://source.unsplash.com/random/600x800/?painting,abstract" alt="Abstract Bloom">
                 </div>
                 <div class="card-content">
-                    <h4>Abstract Bloom</h4>
+                    <h4>Journalist</h4>
+                    <p>A journalist with a purse, ready for interviews.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?illustration,fantasy" alt="Fantasy Garden">
+                </div>
+                <div class="card-content">
+                    <h4>Fantasy Garden</h4>
+                    <p>Mixed media piece depicting an enchanted landscape, crafted in 2025 with layers of texture and color.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?art,portrait" alt="Serene Muse">
+                </div>
+                <div class="card-content">
+                    <h4>Serene Muse</h4>
+                    <p>Oil painting portraying quiet introspection, finished in 2024 with subtle pink undertones.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?digital,art" alt="Digital Harmony">
+                </div>
+                <div class="card-content">
+                    <h4>Digital Harmony</h4>
+                    <p>Vector-based digital art harmonizing shapes and colors, designed in 2025.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?watercolor,abstract" alt="Whimsical Waves">
+                </div>
+                <div class="card-content">
+                    <h4>Whimsical Waves</h4>
+                    <p>Watercolor abstract inspired by ocean dreams, created in 2025 with flowing pink gradients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h3>Contact Me</h3>
+        <p>I'm always excited to discuss new projects, collaborations, or commissions. Feel free to reach out via email or connect on social media.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Iyebiye Babs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const icon = toggle.querySelector('i');
+       
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        toggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // Prevent right-click on images
+        document.querySelectorAll('.image-container').forEach(container => {
+            container.addEventListener('contextmenu', e => e.preventDefault());
+        });
+
+        // Prevent drag-start on cards (extra protection)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('dragstart', e => e.preventDefault());
+        });
+    </script>
+</body>
+</html></h4>
                     <p>Acrylic on canvas exploring floral abstractions and emotional depth, completed in 2025.</p>
                 </div>
             </div>
