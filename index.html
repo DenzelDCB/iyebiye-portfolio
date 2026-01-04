@@ -9,33 +9,29 @@
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --bg-color: #fdf2f8;     /* Light pink background */
+            --bg-color: #fdf2f8; /* Light pink background */
             --text-color: #333;
-            --accent-color: #ff69b4;  /* Hot pink */
+            --accent-color: #ff69b4; /* Hot pink */
             --secondary-accent: #ffb6c1; /* Light pink */
             --card-bg: #ffffff;
             --shadow: rgba(255, 105, 180, 0.2);
         }
-
         [data-theme="dark"] {
-            --bg-color: #1e1e2f;     /* Deep charcoal */
-            --text-color: #f0e6ef;   /* Soft light pink text */
+            --bg-color: #1e1e2f; /* Deep charcoal */
+            --text-color: #f0e6ef; /* Soft light pink text */
             --accent-color: #ff85c0; /* Lighter hot pink */
             --secondary-accent: #c71585; /* Darker pink */
             --card-bg: #2d2d44;
             --shadow: rgba(255, 133, 192, 0.3);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
@@ -44,7 +40,6 @@
             line-height: 1.8;
             font-size: 1rem;
         }
-
         header {
             display: flex;
             justify-content: space-between;
@@ -59,37 +54,30 @@
             transition: background-color 0.4s;
             box-shadow: 0 2px 10px var(--shadow);
         }
-
         [data-theme="dark"] header {
             background-color: rgba(30, 30, 47, 0.9);
         }
-
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
             color: var(--accent-color);
         }
-
         nav ul {
             display: flex;
             list-style: none;
         }
-
         nav ul li {
             margin-left: 2rem;
         }
-
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
             transition: color 0.3s;
         }
-
         nav ul li a:hover {
             color: var(--accent-color);
         }
-
         .theme-toggle {
             background: none;
             border: none;
@@ -98,11 +86,9 @@
             color: var(--accent-color);
             transition: transform 0.3s;
         }
-
         .theme-toggle:hover {
             transform: rotate(15deg);
         }
-
         .hero {
             height: 100vh;
             display: flex;
@@ -115,7 +101,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -126,7 +111,6 @@
             background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
             opacity: 0.5;
         }
-
         .hero h2 {
             font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
@@ -134,14 +118,12 @@
             color: var(--accent-color);
             text-shadow: 0 2px 4px var(--shadow);
         }
-
         .hero p {
             font-size: 1.6rem;
             max-width: 900px;
             margin-bottom: 2.5rem;
             font-weight: 300;
         }
-
         .btn {
             padding: 1.2rem 2.5rem;
             background: var(--accent-color);
@@ -152,18 +134,15 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 10px var(--shadow);
         }
-
         .btn:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 15px var(--shadow);
         }
-
         section {
             padding: 8rem 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         h3 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
@@ -172,7 +151,6 @@
             color: var(--accent-color);
             position: relative;
         }
-
         h3::after {
             content: '';
             display: block;
@@ -181,24 +159,20 @@
             background: var(--accent-color);
             margin: 1rem auto 0;
         }
-
         .about {
             text-align: center;
             font-size: 1.2rem;
             max-width: 900px;
             margin: 0 auto;
         }
-
         .about p {
             margin-bottom: 1.5rem;
         }
-
         .artworks-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
-
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -206,64 +180,72 @@
             box-shadow: 0 10px 20px var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px var(--shadow);
         }
 
-        .card img {
+        /* Image protection styles */
+        .image-container {
+            position: relative;
             width: 100%;
             height: 350px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.3s;
+            display: block;
         }
-
-        .card:hover img {
+        .card:hover .image-container img {
             transform: scale(1.05);
+        }
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: default;
         }
 
         .card-content {
             padding: 2rem;
             text-align: center;
         }
-
         .card h4 {
             font-family: 'Playfair Display', serif;
             margin-bottom: 0.5rem;
             color: var(--accent-color);
             font-size: 1.5rem;
         }
-
         .card p {
             font-size: 1rem;
             color: var(--text-color);
         }
-
         .contact {
             text-align: center;
         }
-
         .contact p {
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-
         .social-links {
             margin-top: 2rem;
         }
-
         .social-links a {
             color: var(--accent-color);
             font-size: 2rem;
             margin: 0 1rem;
             transition: color 0.3s;
         }
-
         .social-links a:hover {
             color: var(--secondary-accent);
         }
-
         footer {
             text-align: center;
             padding: 3rem;
@@ -271,7 +253,6 @@
             color: white;
             margin-top: 4rem;
         }
-
         @media (max-width: 768px) {
             .hero h2 { font-size: 3.5rem; }
             .hero p { font-size: 1.4rem; }
@@ -304,11 +285,11 @@
     <section class="about" id="about">
         <h3>About Me</h3>
         <p>At the heart of my creative journey lies a deep commitment to authenticity, empathy, and beauty. I believe art is a powerful vessel for expressing the unseen emotions and quiet strengths that reside within us all. Through my work, I strive to celebrate vulnerability as a source of power, to honor the gentle resilience of the human spirit, and to remind viewers of the profound joy found in small, tender moments.</p>
-        
+       
         <p>My practice is guided by core values of kindness, curiosity, and inclusivity. I am passionate about creating spaces, both on canvas and in life where diverse stories and perspectives can bloom freely. Color, especially the spectrum of pink, represents for me warmth, hope, and unconditional love; it is a visual language I return to again and again to evoke feelings of comfort and possibility.</p>
-        
+       
         <p>Integrity and intention drive every piece I create. I approach art not as mere decoration, but as an invitation to pause, reflect, and connect more deeply with oneself and others. Whether working digitally or with traditional mediums, I aim to craft images that feel like soft whispers of encouragement and gentle reminders that we are all worthy of love, growth, and creative expression.</p>
-        
+       
         <p>Above all, I value the transformative power of art to heal, uplift, and inspire. My greatest hope is that my work leaves viewers with a renewed sense of wonder and a quiet confidence in their own inner light.</p>
     </section>
 
@@ -316,61 +297,65 @@
         <h3>Professional Artworks</h3>
         <div class="artworks-grid">
             <div class="card">
-                <img src="./roller-skater.jpg" alt="Artwork 1">
+                <div class="image-container">
+                    <img src="./roller-skater.jpg" alt="Roller Skater">
+                </div>
                 <div class="card-content">
                     <h4>Roller Skater</h4>
                     <p>My first drawing, Roller Skater.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://source.unsplash.com/random/600x800/?painting,abstract" alt="Artwork 2">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?painting,abstract" alt="Abstract Bloom">
+                </div>
                 <div class="card-content">
                     <h4>Abstract Bloom</h4>
                     <p>Acrylic on canvas exploring floral abstractions and emotional depth, completed in 2025.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://source.unsplash.com/random/600x800/?illustration,fantasy" alt="Artwork 3">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?illustration,fantasy" alt="Fantasy Garden">
+                </div>
                 <div class="card-content">
                     <h4>Fantasy Garden</h4>
                     <p>Mixed media piece depicting an enchanted landscape, crafted in 2025 with layers of texture and color.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://source.unsplash.com/random/600x800/?art,portrait" alt="Artwork 4">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?art,portrait" alt="Serene Muse">
+                </div>
                 <div class="card-content">
                     <h4>Serene Muse</h4>
                     <p>Oil painting portraying quiet introspection, finished in 2024 with subtle pink undertones.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://source.unsplash.com/random/600x800/?digital,art" alt="Artwork 5">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?digital,art" alt="Digital Harmony">
+                </div>
                 <div class="card-content">
                     <h4>Digital Harmony</h4>
                     <p>Vector-based digital art harmonizing shapes and colors, designed in 2025.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://source.unsplash.com/random/600x800/?watercolor,abstract" alt="Artwork 6">
+                <div class="image-container">
+                    <img src="https://source.unsplash.com/random/600x800/?watercolor,abstract" alt="Whimsical Waves">
+                </div>
                 <div class="card-content">
                     <h4>Whimsical Waves</h4>
                     <p>Watercolor abstract inspired by ocean dreams, created in 2025 with flowing pink gradients.</p>
                 </div>
             </div>
-            <!-- Add more cards as needed for expansion -->
         </div>
     </section>
 
     <section class="contact" id="contact">
         <h3>Contact Me</h3>
         <p>I'm always excited to discuss new projects, collaborations, or commissions. Feel free to reach out via email or connect on social media.</p>
-        <!-- <p>Email: hello@iyebiyebabs.com</p>
-        <p>Phone: +1 (555) 123-4567</p> -->
-        <!-- <div class="social-links">
-            <a href="https://instagram.com/iyebiyebabs" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/iyebiyebabs" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com/in/iyebiyebabs" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div> -->
     </section>
 
     <footer>
@@ -380,7 +365,7 @@
     <script>
         const toggle = document.querySelector('.theme-toggle');
         const icon = toggle.querySelector('i');
-        
+       
         // Load saved theme
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -393,6 +378,16 @@
             localStorage.setItem('theme', isDark ? 'light' : 'dark');
             icon.classList.toggle('fa-moon');
             icon.classList.toggle('fa-sun');
+        });
+
+        // Prevent right-click on images
+        document.querySelectorAll('.image-container').forEach(container => {
+            container.addEventListener('contextmenu', e => e.preventDefault());
+        });
+
+        // Prevent drag-start on cards (extra protection)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('dragstart', e => e.preventDefault());
         });
     </script>
 </body>
