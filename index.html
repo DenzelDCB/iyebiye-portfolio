@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Art Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #fdf2f8;     /* Light pink background */
+            --text-color: #333;
+            --accent-color: #ff69b4;  /* Hot pink */
+            --card-bg: #ffffff;
+            --shadow: rgba(255, 105, 180, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1e1e2f;     /* Deep charcoal */
+            --text-color: #f0e6ef;   /* Soft light pink text */
+            --accent-color: #ff85c0; /* Lighter hot pink */
+            --card-bg: #2d2d44;
+            --shadow: rgba(255, 133, 192, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(253, 242, 248, 0.8); /* Semi-transparent for light */
+            backdrop-filter: blur(10px);
+            transition: background-color 0.4s;
+        }
+
+        [data-theme="dark"] header {
+            background-color: rgba(30, 30, 47, 0.8);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--accent-color);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(to bottom, var(--bg-color), rgba(255, 255, 255, 0.5));
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 6rem 5%;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--accent-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pink Art Studio</h1>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <section class="hero">
+        <h2>Artistic Visions in Pink</h2>
+        <p>Welcome to my creative portfolio – a dreamy collection of illustrations, paintings, and digital art inspired by emotion and elegance.</p>
+        <a href="#portfolio" class="btn">View My Work</a>
+    </section>
+
+    <section class="about" id="about">
+        <h3>About Me</h3>
+        <p>I'm a passionate artist blending soft pastels with bold expressions. My work explores themes of femininity, nature, and fantasy, often in dreamy pink hues. Let's create something beautiful together.</p>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h3>Portfolio</h3>
+        <div class="portfolio-grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/random/600x800/?art,pink" alt="Artwork 1">
+                <div class="card-content">
+                    <h4>Dreamy Portrait</h4>
+                    <p>Digital illustration, 2025</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/600x800/?painting,abstract" alt="Artwork 2">
+                <div class="card-content">
+                    <h4>Abstract Bloom</h4>
+                    <p>Acrylic on canvas, 2025</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/600x800/?illustration,fantasy" alt="Artwork 3">
+                <div class="card-content">
+                    <h4>Fantasy Garden</h4>
+                    <p>Mixed media, 2025</p>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pink Art Studio. All rights reserved.</p>
+        <p>Contact: artist@example.com</p>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const icon = toggle.querySelector('i');
+        
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        toggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+</html>
